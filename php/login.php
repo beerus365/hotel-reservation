@@ -1,20 +1,25 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
+include("connection.php");
+include("functions.php");
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
+    $name = $_POST["name"];
     $password = $_POST["password"];
 
     // Dummy credentials for demonstration
-    $valid_username = "admin";
+    $valid_name = "admin";
     $valid_password = "password";
 
-    if ($username === $valid_username && $password === $valid_password) {
-        $_SESSION["loggedin"] = true;
+    if ($name === $valid_name && $password === $valid_password) {
         header("Location: ../html/dashboard.html");
         exit;
     } else {
-        $error = "Invalid username or password.";
+        $error = "Invalid name or password.";
     }
 }
 ?>

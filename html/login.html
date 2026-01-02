@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Reservation</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <div>
+<body class="login">
+    <div class="login-container">
         <h1>Login</h1>
-        <form action="login.php" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <form class="login-form" action="../php/login.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
             <br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <br>
             <input type="submit" value="Login">
+            <br><br>
+            <a href="signup.html">Don't have an account? Register here</a>
         </form>
     </div>
 </body>

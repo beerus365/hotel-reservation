@@ -1,0 +1,50 @@
+/* Login Page Styles */
+
+body.login {
+    background: url('../assets/blur-pool-hotel-resort.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+body.login h1 {
+    color: #333;
+}
+
+body.login form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body.login form input[type="text"],
+body.login form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 30px 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+body.login form input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.login form input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
