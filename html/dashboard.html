@@ -3,56 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Reservation</title>
+    <title>Paradise Resort - Hotel Reservation</title>
     <link rel="stylesheet" href="../css/style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home" class="nav-link active" data-page="home">Home</a>
+            <a href="#profile" class="nav-link" data-page="profile">Profile</a>
+            <a href="#bookings" class="nav-link" data-page="bookings">Bookings</a>
+            <a href="#settings" class="nav-link" data-page="settings">Settings</a>
+            <a href="#logout" class="nav-link" data-page="logout">Logout</a>
+        </div>
+    </nav>
 
-<body class="dashboard">
-    <div class="header">
-        <a href="../html/dashboard.html">
-            <button>Home</button>
-        </a>
-        <a href="../html/profile.html">
-            <button>Profile</button>
-        </a>
-        <a href="../html/bookings.html">
-            <button>Bookings</button>
-        </a>
-        <a href="../html/settings.html">
-            <button>Settings</button>
-        </a>
-        <a href="../html/logout.html">
-            <button id="logout-button">Logout</button>
-        </a>
-    </div>
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Paradise Resort & Spa</h1>
+                <p>Experience luxury and tranquility in our exclusive beachfront resort</p>
+                <button class="btn-primary" onclick="showBookingForm()">Book Now</button>
+            </div>
+        </div>
 
-    <div class="slider">
-        <div class="slide-track">
-            <div class="slide">
-                <img src="../assets/pic1.jpg" alt="Room 1">
-            </div>
-            <div class="slide">
-                <img src="../assets/pic2.jpg" alt="Room 2">
-            </div>
-            <div class="slide">
-                <img src="../assets/pic3.jpg" alt="Room 3">
-            </div>
+        <div class="container">
+            <!-- Hotel Information -->
+            <section class="hotel-info">
+                <h2>About Our Resort</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">🏊</div>
+                        <h3>Infinity Pool</h3>
+                        <p>Relax in our stunning infinity pool with panoramic views</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🍽️</div>
+                        <h3>Fine Dining</h3>
+                        <p>Experience world-class cuisine at our restaurants</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">💆</div>
+                        <h3>Spa & Wellness</h3>
+                        <p>Rejuvenate your body and mind at our luxury spa</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🏖️</div>
+                        <h3>Beach Access</h3>
+                        <p>Private beach with crystal clear waters</p>
+                    </div>
+                </div>
+            </section>
 
-            <!-- Double -->
-            <div class="slide">
-                <img src="../assets/pic1.jpg" alt="Room 1">
-            </div>
-            <div class="slide">
-                <img src="../assets/pic2.jpg" alt="Room 2">
-            </div>
-            <div class="slide">
-                <img src="../assets/pic3.jpg" alt="Room 3">
-            </div>        
+            <!-- Room Types -->
+            <section class="rooms-section">
+                <h2>Our Rooms</h2>
+                <div class="rooms-grid">
+                    <div class="room-card">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800" alt="Deluxe Room">
+                        <div class="room-info">
+                            <h3>Deluxe Room</h3>
+                            <p>Spacious room with garden view</p>
+                            <p class="price">$150 / night</p>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800" alt="Ocean View Suite">
+                        <div class="room-info">
+                            <h3>Ocean View Suite</h3>
+                            <p>Luxurious suite with ocean views</p>
+                            <p class="price">$250 / night</p>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Presidential Suite">
+                        <div class="room-info">
+                            <h3>Presidential Suite</h3>
+                            <p>Ultimate luxury with private terrace</p>
+                            <p class="price">$450 / night</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
+
+    <!-- Profile Page -->
+    <div id="profile-page" class="page">
+        <div class="container">
+            <h2>My Profile</h2>
+            <div class="profile-content">
+                <div class="profile-card">
+                    <div class="profile-avatar">👤</div>
+                    <h3 id="profile-name">Guest User</h3>
+                    <p id="profile-email">guest@example.com</p>
+                    <button class="btn-secondary" onclick="editProfile()">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bookings Page -->
+    <div id="bookings-page" class="page">
+        <div class="container">
+            <h2>My Bookings</h2>
+            <div id="bookings-list" class="bookings-list">
+                <p class="empty-state">No bookings yet. Make your first reservation!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Page -->
+    <div id="settings-page" class="page">
+        <div class="container">
+            <h2>Settings</h2>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label>Email Notifications</label>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="setting-item">
+                    <label>SMS Notifications</label>
+                    <input type="checkbox">
+                </div>
+                <div class="setting-item">
+                    <label>Newsletter</label>
+                    <input type="checkbox" checked>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Make a Reservation</h2>
+                <span class="close" onclick="closeBookingForm()">&times;</span>
+            </div>
+            <form id="booking-form" onsubmit="submitBooking(event)">
+                <div class="form-group">
+                    <label for="guest-name">Full Name *</label>
+                    <input type="text" id="guest-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guest-email">Email *</label>
+                    <input type="email" id="guest-email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guest-phone">Phone *</label>
+                    <input type="tel" id="guest-phone" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="check-in">Check-in *</label>
+                        <input type="date" id="check-in" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="check-out">Check-out *</label>
+                        <input type="date" id="check-out" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="room-type">Room Type *</label>
+                        <select id="room-type" required>
+                            <option value="">Select Room</option>
+                            <option value="deluxe" data-price="150">Deluxe Room - $150/night</option>
+                            <option value="ocean" data-price="250">Ocean View Suite - $250/night</option>
+                            <option value="presidential" data-price="450">Presidential Suite - $450/night</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests *</label>
+                        <input type="number" id="guests" min="1" max="4" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" rows="3"></textarea>
+                </div>
+
+                <div class="booking-summary">
+                    <div class="summary-row">
+                        <span>Total Nights:</span>
+                        <span id="total-nights">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Price per Night:</span>
+                        <span id="price-per-night">$0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Amount:</span>
+                        <span id="total-amount">$0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary full-width">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="confirmation-content">
+                <div class="success-icon">✓</div>
+                <h2>Booking Confirmed!</h2>
+                <p>Your reservation has been successfully confirmed.</p>
+                <p>A confirmation email has been sent to <span id="confirm-email"></span></p>
+                <div id="booking-details" class="booking-details"></div>
+                <button class="btn-primary" onclick="closeConfirmation()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
 </body>
 </html>
